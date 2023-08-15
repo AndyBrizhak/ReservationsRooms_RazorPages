@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationsRooms_RazorPages", "ReservationsRooms_RazorPages\ReservationsRooms_RazorPages.csproj", "{FDC0DAD7-6F7C-47EE-8A56-FF2A36C4414A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reservations", "ReservationsRooms_RazorPages\Reservations.csproj", "{FDC0DAD7-6F7C-47EE-8A56-FF2A36C4414A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

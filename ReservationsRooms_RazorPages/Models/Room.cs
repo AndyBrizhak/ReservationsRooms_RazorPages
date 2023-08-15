@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ReservationsRooms_RazorPages.Models
+namespace Reservations.Models
 {
     public class Room
     {

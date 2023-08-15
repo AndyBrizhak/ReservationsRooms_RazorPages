@@ -1,4 +1,4 @@
-﻿namespace ReservationsRooms_RazorPages
+﻿namespace Reservations
 {
     public static class SD
     {
