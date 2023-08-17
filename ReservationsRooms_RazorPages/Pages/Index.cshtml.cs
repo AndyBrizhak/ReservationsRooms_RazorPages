@@ -16,8 +16,7 @@ namespace ReservationsRooms_RazorPages.Pages
         
         public void OnGet()
         {
-
-            var State = RoomsInitializer.RoomsState;
+            var allState = InitStatus.RoomsStatic;
         }
     }
 }
