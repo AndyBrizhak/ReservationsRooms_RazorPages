@@ -8,15 +8,16 @@ namespace ReservationsRooms_RazorPages.Pages
     public class IndexModel : PageModel
     {
         //private readonly ILogger<IndexModel> _logger;
+        public IEnumerable<Room> Rooms { get; set; }
 
         //public IndexModel(ILogger<IndexModel> logger)
         //{
         //    _logger = logger;
         //}
-        
+
         public void OnGet()
         {
-            var allState = InitStatus.RoomsStatic;
+            Rooms = InitStatus.RoomsStatic;
         }
     }
 }
