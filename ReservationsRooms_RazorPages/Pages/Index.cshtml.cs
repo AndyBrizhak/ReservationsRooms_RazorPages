@@ -15,6 +15,7 @@ namespace ReservationsRooms_RazorPages.Pages
         //    _logger = logger;
         //}
 
+        [HttpGet]
         public void OnGet()
         {
             Rooms = InitStatus.RoomsStatic;

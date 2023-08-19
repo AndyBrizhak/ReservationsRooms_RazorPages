@@ -1,8 +1,9 @@
 ﻿@page
 @model IndexModel
-@{
+@using Reservations
+@* @{
     ViewData["Title"] = "Home page";
-}
+} *@
 
 <div class="container p-3">
     <div    class="row pt-4">
@@ -11,24 +12,57 @@
             <div >
                 @foreach(var obj in Model.Rooms)
                 {
-                    @obj.Status
+                    if (@obj.Status == SD.Available);
+                    {
+                        <button type="button" class="btn btn-success">@obj.Id</button>
+                    }
                 }
             </div>
         </div>
     </div>
     <div class="row pt-4">
         <div class="col-12">
-            <h2 class="text-pimary">Clearning Rooms</h2>
+            <h2 class="text-pimary">Cleaning</h2>
+            <div>
+                @foreach (var obj in Model.Rooms)
+                {
+                    if (@obj.Status == SD.Cleaning) ;
+                    {
+                        <button type="button" class="btn btn-warning">@obj.Id</button>
+                    }
+                }
+            </div>
         </div>
     </div>
     <div class="row pt-4">
         <div class="col-12">
             <h2 class="text-pimary">Busy Rooms</h2>
+            <div>
+                @foreach (var obj in Model.Rooms)
+                {
+                    if (@obj.Status == SD.Busy) ;
+                    {
+                        <button type="button" class="btn btn-dander">@obj.Id</button>
+                    }
+                }
+            </div>
         </div>
     </div>
     <div class="row pt-4">
         <div class="col-12">
             <h2 class="text-pimary">Renovation Rooms</h2>
+            <div>
+                @foreach (var obj in Model.Rooms)
+                {
+                    if (@obj.Status == SD.Renovation);
+                    {
+                        <div> 
+                            obj.Name 
+                        </div>
+                        <button type="button" class="btn btn-secondary">@obj.Id</button>
+                    }
+                }
+            </div>
         </div>
     </div>
     
