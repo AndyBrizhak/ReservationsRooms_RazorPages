@@ -4,6 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+//builder.Services.AddScoped<IStartInit, StartInit>();
 
 var app = builder.Build();
 
@@ -15,6 +16,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -22,6 +24,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// #ToDo Initialize dates 
+//StartInit.Start();
+
 app.MapRazorPages();
+
+
 
 app.Run();

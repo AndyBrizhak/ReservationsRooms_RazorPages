@@ -3,16 +3,16 @@
 
 namespace Reservations.Data
 {
-    public class StartInit : IStartInit 
+    public static class StartInit /*: IStartInit */
     {
-        public void Start()
+        public static void Start()
         {
             try
             {
-                if (SD.Rooms is not null)
-                {
+                //if (SD.Rooms is not null)
+                //{
                     
-                }
+                //}
 
             }
             catch (Exception)
