@@ -1,16 +1,17 @@
 ﻿@page
 @model IndexModel
-@using Reservations
-@* @{
+
+@{
     ViewData["Title"] = "Home page";
-} *@
+}
+@using Reservations
 
 <div class="container p-3">
-    <div    class="row pt-4">
+    <div class="row pt-4">
         <div class="col-12">
-            <h2 class= "text-pimary">Available Rooms</h2>
-            <div >
-                @foreach(var obj in Model.Rooms)
+            <h2 class="text-pimary">Available Rooms</h2>
+            <div>
+                @foreach (var obj in Model.Rooms)
                 {
                     if (@obj.Status == SD.Available);
                     {
@@ -26,7 +27,7 @@
             <div>
                 @foreach (var obj in Model.Rooms)
                 {
-                    if (@obj.Status == SD.Cleaning) ;
+                    if (@obj.Status == SD.Cleaning);
                     {
                         <button type="button" class="btn btn-warning">@obj.Id</button>
                     }
@@ -40,7 +41,7 @@
             <div>
                 @foreach (var obj in Model.Rooms)
                 {
-                    if (@obj.Status == SD.Busy) ;
+                    if (@obj.Status == SD.Busy);
                     {
                         <button type="button" class="btn btn-dander">@obj.Id</button>
                     }
@@ -56,14 +57,11 @@
                 {
                     if (@obj.Status == SD.Renovation);
                     {
-                        <div> 
-                            obj.Name 
-                        </div>
-                        <button type="button" class="btn btn-secondary">@obj.Id</button>
+                        <button type="button" class="btn btn-secondary">@obj.Name</button>
                     }
                 }
             </div>
         </div>
     </div>
-    
+
 </div>

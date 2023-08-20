@@ -9,9 +9,6 @@ namespace Reservations.Models
         public string? Name { get; set; }
         public string? Description { get; set; }
         [Required]
-        public string Status { get; set; }
-
-
-
+        public string Status { get; set; } = SD.Renovation;
     }
 }
