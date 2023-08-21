@@ -26,6 +26,7 @@ namespace Reservations
                 room.Id = i;
                 room.Name = i.ToString();
                 //room.Status = SD.Renovation;
+                Rooms.Add(room);
             }
 
         }
