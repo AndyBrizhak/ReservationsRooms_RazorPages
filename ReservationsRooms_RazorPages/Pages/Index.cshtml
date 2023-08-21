@@ -10,15 +10,12 @@
     <div class="row pt-4">
         <div class="col-12">
             <h2 class="text-pimary">Available Rooms</h2>
-            @* <div>
-                <h1>Test</h1>
-            </div>    *@ 
             <div>
                 @foreach (var obj in Model.Rooms)
                 {
-                    if (@obj.Status == SD.Available);
+                    if (@obj.Status == SD.Available)
                     {
-                        <button type="button" class="btn btn-success">@obj.Id</button>
+                        <button type="button" class="btn btn-success">@obj.Name</button>
                     }
                 }
             </div>
@@ -30,7 +27,7 @@
             <div>
                 @foreach (var obj in Model.Rooms)
                 {
-                    if (@obj.Status == SD.Cleaning);
+                    if (@obj.Status == SD.Cleaning)
                     {
                         <button type="button" class="btn btn-warning">@obj.Id</button>
                     }
@@ -44,7 +41,7 @@
             <div>
                 @foreach (var obj in Model.Rooms)
                 {
-                    if (@obj.Status == SD.Busy);
+                    if (@obj.Status == SD.Busy)
                     {
                         <button type="button" class="btn btn-dander">@obj.Id</button>
                     }
@@ -58,7 +55,7 @@
             <div>
                 @foreach (var obj in Model.Rooms)
                 {
-                    if (@obj.Status == SD.Renovation);
+                    if (@obj.Status == SD.Renovation)
                     {
                         <button type="button" class="btn btn-secondary">@obj.Name</button>
                     }

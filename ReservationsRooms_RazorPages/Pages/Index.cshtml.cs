@@ -20,10 +20,10 @@ namespace ReservationsRooms_RazorPages.Pages
 
         public List<Room> Rooms { get; set; } = new List<Room>();
               
-        public  IActionResult OnGet()
+        public  void OnGet()
         {
             Rooms=SD.Rooms;
-            return Content("Test"); 
+            //return Content("Test"); 
 
         }
 
