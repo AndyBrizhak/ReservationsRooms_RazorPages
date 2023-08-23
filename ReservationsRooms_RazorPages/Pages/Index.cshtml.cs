@@ -11,15 +11,18 @@ namespace ReservationsRooms_RazorPages.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+        [BindProperty]
+        public List<Room> Rooms { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger )
         {
             _logger = logger;
+
         }
 
 
-        public List<Room> Rooms { get; set; } = new List<Room>();
-              
+        //public List<Room> Rooms { get; set; } = new List<Room>();
+
         public  void OnGet()
         {
             Rooms=SD.Rooms;
