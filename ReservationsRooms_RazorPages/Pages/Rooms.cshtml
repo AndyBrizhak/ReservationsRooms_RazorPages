@@ -7,18 +7,18 @@
 		<div class="col-6">
 			<h2 class="text-primary">Rooms List</h2>
 		</div>
-		@* <div class="col-6">
-
-		</div> *@
 	</div>
 
 	<br /><br />
 
-	<table class="table table-bordered table-striped" style="width:100%">
+	<table class="table table-bordered table-striped" style="width:80%">
 		<thead>
 			<tr>
 				<th>
 					Room Name
+				</th>
+				<th>
+					Current Status
 				</th>
 				<th>
 					Change Status
@@ -30,7 +30,8 @@
 			{
 				<tr>
 					<td width="20%">@obj.Name</td>
-					<td width="80%"></td>
+					<td width="20%">@obj.Status</td>
+					<td width="60%">@* @obj.Status *@</td>
 				</tr>
 			}
 
