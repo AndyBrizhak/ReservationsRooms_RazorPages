@@ -1,6 +1,7 @@
-﻿@page "{id:int?}/{status?}"
+﻿@page 
+@* "{id:int?}/{status?}" *@
 @model Reservations.Pages.RoomsModel
-@* <form method="post"> *@
+
 <div class="container p-3">
 	<div class="row pt-4">
 		<div class="col-6">
@@ -28,17 +29,30 @@
 				@foreach (var obj in Model.Rooms)
 				{
 					<tr>
-						<td width="20%">@obj.Name</td>
-					<td width="20%">@obj.Status</td>
-					<td width="60%">
+						<td width="10%">@obj.Name</td>
+					<td width="10%">
+						@obj.Status
+						
+					
+					</td>
+					<td width="10%">
+						<a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+							Chnage Status
+						</a>
+					</td>
+					@* <td width="60%">
 						<div class="col">
-								@* <input type="submit" asp-page-handler="OnPost" value="available" /> *@
-								@* <input type="submit" asp-for="@obj.Status" value="To Available" /> *@
+							<form method="post">
+								
 								<a 
 									asp-page-handler="OnPost" 
 									asp-route-id="@obj.Id" 
 									asp-route-status="available">To Available
+							<input type="submit" asp-page-handler="OnPost" value="available" />
+							<input type="submit" asp-for="@obj.Status" value="To Available" />
+
 								</a>
+							</form>
 									
 								
 														
@@ -52,10 +66,9 @@
 								To Renovation
 							</a>
 						</div>
-					</td>
+					</td> *@
 				</tr>
 			}
 		</tbody>
 	</table>
 </div>
-@* </form> *@
