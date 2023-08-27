@@ -29,44 +29,32 @@
 				@foreach (var obj in Model.Rooms)
 				{
 					<tr>
-						<td width="10%">@obj.Name</td>
-					<td width="10%">
-						@obj.Status
-						
-					
+					<td width="10%" id="@obj.Id">
+						 @obj.Id
 					</td>
-					<td width="10%">
-						<a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
-							Chnage Status
-						</a>
+					<td width="10%" id="@obj.Id@obj.Status">
+						@obj.Status 
 					</td>
-					@* <td width="60%">
+					<td width="60%">
 						<div class="col">
-							<form method="post">
-								
-								<a 
-									asp-page-handler="OnPost" 
-									asp-route-id="@obj.Id" 
-									asp-route-status="available">To Available
-							<input type="submit" asp-page-handler="OnPost" value="available" />
-							<input type="submit" asp-for="@obj.Status" value="To Available" />
-
-								</a>
-							</form>
-									
-								
-														
-							<a class="col-3 btn btn-warning">
+							<a class="col-3 btn btn-success 
+										id="@obj.Id@obj.Status+ToAvailable"">
+								To Available
+						</a>
+							<a class="col-3 btn btn-warning
+								id="@obj.Id@obj.Status+ToCleaning"">
 								To Cleaning
 							</a>
-							<a class="col-3 btn btn-danger">
+							<a class="col-3 btn btn-danger
+								id="@obj.Id@obj.Status+ToBusy"">
 								To Busy
 							</a>
-							<a class="btn btn-secondary">
+							<a class="btn btn-secondary
+								id="@obj.Id@obj.Status+ToRenovation"">
 								To Renovation
 							</a>
 						</div>
-					</td> *@
+					</td>
 				</tr>
 			}
 		</tbody>

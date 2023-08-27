@@ -17,12 +17,12 @@ namespace Reservations.Pages
             }
         }
 
-        public IActionResult OnPost()
-        { 
-            if (Room != null) 
-            {
-                SD.Rooms.Room[id]
-            }
-        }
+        //public IActionResult OnPost()
+        //{ 
+        //    if (Room != null) 
+        //    {
+        //        SD.Rooms.Room[id]
+        //    }
+        //}
     }
 }

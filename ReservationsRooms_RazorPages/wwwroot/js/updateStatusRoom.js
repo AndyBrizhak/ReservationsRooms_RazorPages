@@ -14,6 +14,8 @@ connectionStatusHub.on("changeStatus", (id, status) =>{
 
 // invoke hub method, aka send notification to hub
 function NewStatusRoomLoadedOnClient() {
+    var status = document.getElementById(currentStatus);
+    var id = document.getElementById(currentId);
     connectionStatusHub.send("NewStatusRoomLoaded", id, status)
 }
 
