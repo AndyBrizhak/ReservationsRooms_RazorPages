@@ -1,10 +1,12 @@
 using Reservations.Data;
+using Reservations.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 //builder.Services.AddScoped<IStartInit, StartInit>();
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -28,6 +30,7 @@ app.UseAuthorization();
 //StartInit.Start();
 
 app.MapRazorPages();
+app.MapHub<StatusHub>("/hubs/statushub");
 
 
 
