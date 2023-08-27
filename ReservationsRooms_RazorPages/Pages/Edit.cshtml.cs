@@ -19,7 +19,8 @@ namespace Reservations.Pages
 
         public IActionResult OnPost(int id, string status )
         {
-            SD.Rooms[id].Status = status;
+            
+            SD.Rooms[id-1].Status = status;
             return RedirectToPage("Index");
         }
     }
