@@ -4,7 +4,7 @@
 <input hidden asp-for="Room.Id"/>
 <div class="border p-3 mt-4">
     <div class="row pb-2">
-        <h2 class="text-primary pl-3">Change Status Room @Model.Room.Id-1</h2>
+        <h2 class="text-primary pl-3">Change Status Room @(Model.Room.Id-1)</h2>
         <h2 class="text-primary pl-3">Current Status Room - @Model.Room.Status</h2>
         <hr />
     </div>
@@ -49,4 +49,4 @@
     </form>
             
 </div>
-<a asp-page="Index" class="btn btn-info">Back to List </a>
+<a asp-page="Rooms" class="btn btn-info">Back to List </a>
