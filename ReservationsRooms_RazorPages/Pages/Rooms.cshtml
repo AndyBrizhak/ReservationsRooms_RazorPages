@@ -32,27 +32,40 @@
 					<td width="10%" id="@obj.Id">
 						 @obj.Id
 					</td>
-					<td width="10%" id="@obj.Id@obj.Status">
+					<td width="100%" class="btn btn-info" @* style="display:none" *@ id="@obj.Id@obj.Status">
 						@obj.Status 
 					</td>
 					<td width="60%">
 						<div class="col">
-							<a class="col-3 btn btn-success 
-										id="@obj.Id@obj.Status+ToAvailable"">
-								To Available
-						</a>
-							<a class="col-3 btn btn-warning
-								id="@obj.Id@obj.Status+ToCleaning"">
-								To Cleaning
-							</a>
-							<a class="col-3 btn btn-danger
-								id="@obj.Id@obj.Status+ToBusy"">
-								To Busy
-							</a>
-							<a class="btn btn-secondary
+							@if(@obj.Status!="available")
+							{
+								<a class="col-3 btn btn-success
+										id=" @obj.Id@obj.Status+ToAvailable"">
+									To Available
+								</a>
+							}
+							@if (@obj.Status != "cleaning")
+							{
+								<a class="col-3 btn btn-warning
+								id=" @obj.Id@obj.Status+ToCleaning"">
+									To Cleaning
+								</a>
+							}
+							@if (@obj.Status != "busy")
+							{
+								<a class="col-3 btn btn-danger
+								 id="@obj.Id@obj.Status+ToBusy"">
+									To Busy
+								</a>
+							}
+							
+							@if (@obj.Status != "renovation")
+							{
+								<a class="btn btn-secondary
 								id="@obj.Id@obj.Status+ToRenovation"">
-								To Renovation
-							</a>
+									To Renovation
+								</a>
+							}
 						</div>
 					</td>
 				</tr>
