@@ -1,4 +1,37 @@
 ﻿@page
 @model Reservations.Pages.EditModel
-@{
-}
+
+<input hidden asp-for="Room.Id"/>
+<div class="border p-3 mt-4">
+    <div class="row pb-2">
+        <h2 class="text-primary pl-3">Change Status Room @Model.Room.Id</h2>
+        <h2 class="text-primary pl-3">Current Status Room - @Model.Room.Status</h2>
+        <hr />
+    </div>
+    @if (Model.Room.Status!="available")
+    {
+        <div class="btn btn-success id=" btn_To_Available"">
+            To Available
+        </div>
+    }
+    @if (Model.Room.Status != "cleaning")
+    {
+        <div class="btn btn-warning id=" btn_To_Cleaning"">
+            To Cleaning
+        </div>
+    }
+  
+    @if (Model.Room.Status != "busy")
+    {
+        <div class="btn btn-danger id=" btn_To_Busy"">
+            To Busy
+        </div>
+    }
+    
+    @if (Model.Room.Status != "renovation")
+    {
+        <div class="btn btn-secondary id=" btn_To_Renovation"">
+            To Renovation
+        </div>
+    }
+</div>

@@ -4,6 +4,7 @@ using Reservations.Models;
 
 namespace Reservations.Pages
 {
+    [BindProperties]
     public class EditModel : PageModel
     {
         public Room Room { get; set; }
@@ -11,18 +12,15 @@ namespace Reservations.Pages
         
         public void OnGet(int id)
         {
-            if (Room != null) 
-            { 
-                Room    = SD.Rooms[id];
-            }
+            
+                Room = SD.Rooms[id];
+            
         }
 
-        //public IActionResult OnPost()
-        //{ 
-        //    if (Room != null) 
-        //    {
-        //        SD.Rooms.Room[id]
-        //    }
-        //}
+        public IActionResult OnPost(int id, string status )
+        {
+            SD.Rooms[id].Status = status;
+            return RedirectToPage("Index");
+        }
     }
 }

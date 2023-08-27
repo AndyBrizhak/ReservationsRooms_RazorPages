@@ -38,35 +38,39 @@
 					</td>
 					<td width="60%">
 						<div class="col">
-							@if(@obj.Status!="available")
+							@* @if(@obj.Status!="available")
 							{
 								<div class="col-3 btn btn-success 
 										id="@obj.Id:available"">
 									To Available
 								</div>
-							}
-							@if (@obj.Status != "cleaning")
+							} *@
+							@* @if (@obj.Status != "cleaning")
 							{
 								<div class="col-3 btn btn-warning 
 								id="@obj.Id:cleaning"">
 									To Cleaning
 								</div>
-							}
-							@if (@obj.Status != "busy")
+							} *@
+							@* @if (@obj.Status != "busy")
 							{
 								<div class="col-3 btn btn-danger 
 								 id="@obj.Id:busy"">
 									To Busy
 								</div>
-							}
+							} *@
 							
-							@if (@obj.Status != "renovation")
+							@* @if (@obj.Status != "renovation")
 							{
 								<div class="btn btn-secondary 
 								id="@obj.Id:renovation"">
 									To Renovation
 								</div>
-							}
+							}  *@
+
+							<a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-info mx-2">
+								Edit Status
+							</a>
 						</div>
 					</td>
 				</tr>
