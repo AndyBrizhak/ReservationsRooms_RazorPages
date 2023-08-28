@@ -1,53 +1,48 @@
 ﻿@page
 @model Reservations.Pages.EditModel
 
-<input hidden asp-for="Room.Id"/>
+@* <input hidden asp-for="Room.Id"/> *@
 <div class="border p-3 mt-4">
     <div class="row pb-2">
-        <h2 class="text-primary pl-3">Change Status Room @(Model.Room.Id-1)</h2>
+        <h2 class="text-primary pl-3">Change Status Room @Model.Room.Id</h2>
         <h2 class="text-primary pl-3">Current Status Room - @Model.Room.Status</h2>
         <hr />
     </div>
-   @*  @if (Model.Room.Status!="available")
-    {
-        <div class="btn btn-success id=" btn_To_Available"">
-            To Available
-        </div>
-    } *@
-    @* @if (Model.Room.Status != "cleaning")
-    {
-        <div class="btn btn-warning id=" btn_To_Cleaning"">
-            To Cleaning
-        </div>
-    } *@
-  
-    @* @if (Model.Room.Status != "busy")
-    {
-        <div class="btn btn-danger id=" btn_To_Busy"">
-            To Busy
-        </div>
-    } *@
-    
-    @* @if (Model.Room.Status != "renovation")
-    {
-        <div class="btn btn-secondary id=" btn_To_Renovation"">
-            To Renovation
-        </div>
-    } *@
-
-    <form   method="post">
-        @* <select multiple name="Status">
-            <option>
-                available
-            </option>
-            <option>cleaning</option>
-            <option>busy</option>
-            <option>renovation</option>
-        </select> *@
-        <input  type="text" value="(@Model.Room.Id)" hidden/>
-        <input  type="text" value="available" hidden/>
-        <input type="submit" value="To Available" />
+    <div class="row">
+    @if (Model.Room.Status!="available")
+    {<form   method="post">
+            <input type="number" name="id" value=@Model.Room.Id hidden />
+            <input type="text" name="status" value="available" hidden />
+            <input class="btn btn-success" type="submit" value="To Available" />
     </form>
-            
-</div>
+    }
+    @if (Model.Room.Status != "cleaning")
+    {
+        <form method="post">
+            <input type="number" name="id" value=@Model.Room.Id hidden />
+            <input type="text" name="status" value="cleaning" hidden />
+            <input class="btn btn-warning" type="submit" value="To Cleaning" />
+        </form>
+    }
+  
+    @if (Model.Room.Status != "busy")
+    {
+        <form method="post">
+            <input type="number" name="id" value=@Model.Room.Id hidden />
+            <input type="text" name="status" value="busy" hidden />
+            <input class="btn btn-danger" type="submit" value="To Busy" />
+        </form>
+    }
+    
+    @if (Model.Room.Status != "renovation")
+    {
+        <form method="post">
+            <input type="number" name="id" value=@Model.Room.Id hidden />
+            <input type="text" name="status" value="renovation" hidden />
+            <input class="btn btn-secondary" type="submit" value="To Renovation" />
+        </form>
+    }
+    </div>
+ </div>
 <a asp-page="Rooms" class="btn btn-info">Back to List </a>
+

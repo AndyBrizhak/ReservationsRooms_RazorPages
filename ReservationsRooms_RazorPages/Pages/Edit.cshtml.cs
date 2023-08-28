@@ -8,20 +8,22 @@ namespace Reservations.Pages
     public class EditModel : PageModel
     {
         public Room Room { get; set; }
+        public int Id { get; set; }
+        public string Status { get; set; }
 
-        
-        public void OnGet(int id)
+
+        public void OnGet(int Id)
         {
-            
-                Room = SD.Rooms[id];
+            var roomIndex=Id-1;
+                Room = SD.Rooms[roomIndex];
             
         }
 
-        public IActionResult OnPost(int id, string status )
+        public IActionResult OnPost(/*int id, string status*/)
         {
-            
-            SD.Rooms[id-1].Status = status;
-            return RedirectToPage("Index");
+            var roomIndex = Id - 1;
+            SD.Rooms[roomIndex].Status = Status;
+            return RedirectToPage("Rooms");
         }
     }
 }

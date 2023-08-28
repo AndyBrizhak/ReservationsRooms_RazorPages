@@ -1,5 +1,4 @@
 ﻿@page 
-@* "{id:int?}/{status?}" *@
 @model Reservations.Pages.RoomsModel
 
 <div class="container p-3">
@@ -26,58 +25,29 @@
 			</tr>
 		</thead>
 		<tbody>
-				@foreach (var obj in Model.Rooms)
+				@foreach (var obj in @Model.Rooms)
 				{
-					<tr>
+				<tr>
 					<td width="10%" id="@obj.Id">
 						 @obj.Id
 					</td>
-					<td width="100%" class="btn btn-info" @* style="display:none" *@ 
-                    					@* id="@obj.Id:@obj.Status" *@>
+					<td width="100%" class="btn btn-info"                    					>
 						@obj.Status 
 					</td>
 					<td width="60%">
 						<div class="col">
-							@* @if(@obj.Status!="available")
-							{
-								<div class="col-3 btn btn-success 
-										id="@obj.Id:available"">
-									To Available
-								</div>
-							} *@
-							@* @if (@obj.Status != "cleaning")
-							{
-								<div class="col-3 btn btn-warning 
-								id="@obj.Id:cleaning"">
-									To Cleaning
-								</div>
-							} *@
-							@* @if (@obj.Status != "busy")
-							{
-								<div class="col-3 btn btn-danger 
-								 id="@obj.Id:busy"">
-									To Busy
-								</div>
-							} *@
-							
-							@* @if (@obj.Status != "renovation")
-							{
-								<div class="btn btn-secondary 
-								id="@obj.Id:renovation"">
-									To Renovation
-								</div>
-							}  *@
-
-							<a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-info mx-2">
+							<a asp-page="Edit" 
+								asp-route-id=@obj.Id class="btn btn-info mx-2">
 								Edit Status
 							</a>
 						</div>
 					</td>
 				</tr>
-			}
+				}
 		</tbody>
 	</table>
 </div>
+<a asp-page="Index" class="btn btn-info">Back to Home Page</a>
 
-<script	src="~/js/signalr.js"></script>
-<script src="~/js/updateStatusRoom.js"></script>
+@* <script	src="~/js/signalr.js"></script>
+<script src="~/js/updateStatusRoom.js"></script> *@
