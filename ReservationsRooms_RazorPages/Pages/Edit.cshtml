@@ -36,16 +36,17 @@
     } *@
 
     <form   method="post">
-        <
-        <select multiple name="Status">
+        @* <select multiple name="Status">
             <option>
                 available
             </option>
             <option>cleaning</option>
             <option>busy</option>
             <option>renovation</option>
-        </select>
-        <input type="submit" value="Send" />
+        </select> *@
+        <input  type="text" value="(@Model.Room.Id)" hidden/>
+        <input  type="text" value="available" hidden/>
+        <input type="submit" value="To Available" />
     </form>
             
 </div>
