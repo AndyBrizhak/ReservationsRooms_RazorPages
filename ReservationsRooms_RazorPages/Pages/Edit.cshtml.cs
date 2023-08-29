@@ -19,7 +19,7 @@ namespace Reservations.Pages
             
         }
 
-        public IActionResult OnPost(/*int id, string status*/)
+        public IActionResult OnPost()
         {
             var roomIndex = Id - 1;
             SD.Rooms[roomIndex].Status = Status;
