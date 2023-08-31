@@ -10,7 +10,7 @@
 
 	<br /><br />
 
-	<table class="table table-bordered table-striped" style="width:80%">
+	<table class="table table-bordered table-striped" style="width:100%">
 		<thead>
 			<tr>
 				<th>
@@ -28,18 +28,56 @@
 				@foreach (var obj in @Model.Rooms)
 				{
 				<tr>
-					<td width="10%" id="@obj.Id">
+					<td @* width="10%" *@ id="@obj.Id">
 						 @obj.Id
 					</td>
-					<td width="100%" class="btn btn-info"                    					>
+					<td @* width="100%" *@ class="btn btn-info"                    					>
 						@obj.Status 
 					</td>
-					<td width="60%">
-						<div class="col">
-							<a asp-page="Edit" 
+					<td @* width="70%" *@>
+						@* row row-cols-6 *@
+						<div class="btn-group" role="group">
+							@* <a asp-page="Edit" 
 								asp-route-id=@obj.Id class="btn btn-info mx-2">
 								Edit Status
-							</a>
+							</a> *@
+
+							@if (obj.Status != "available")
+							{
+								<form method="post">
+									
+									<input type="number" name="id" value = obj.Id hidden />
+									<input type="text" name="status" value="available" hidden />
+									<input class="btn btn-success p-1 " type="submit" value="To Available" />
+								</form>
+							}
+
+							@if (obj.Status != "cleaning")
+							{
+								<form method="post">
+									<input type="number" name="id" value=obj.Id hidden />
+									<input type="text" name="status" value="cleaning" hidden />
+									<input class="btn btn-warning p-1" type="submit" value="To Cleaning" />
+								</form>
+							}
+
+							@if (obj.Status != "busy")
+							{
+								<form method="post">
+									<input type="number" name="id" value=obj.Id hidden />
+									<input type="text" name="status" value="busy" hidden />
+									<input class="btn btn-danger p-1" type="submit" value="To Busy" />
+								</form>
+							}
+
+							@if (obj.Status != "renovation")
+							{
+								<form method="post">
+									<input type="number" name="id" value=obj.Id hidden />
+									<input type="text" name="status" value="renovation" hidden />
+									<input class="btn btn-secondary p-1" type="submit" value="To Renovation" />
+								</form>
+							}
 						</div>
 					</td>
 				</tr>
