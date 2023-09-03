@@ -5,7 +5,7 @@
 @using Reservations
 
 <div class="container p-3">
-    <div class="row pt-4">
+    @* <div class="row pt-4">
         <div class="col-12">
             <h2 class="text-pimary">Available Rooms</h2>
             <div>
@@ -46,7 +46,7 @@
                 }
             </div>
         </div>
-    </div>
+    </div> *@
     @* <div class="row pt-4">
         <div class="col-12">
             <h2 class="text-pimary">Renovation Rooms</h2>
@@ -61,5 +61,32 @@
             </div>
         </div>
     </div> *@
+
+    <div class="row pt-4">
+        <div class="col-12">
+            @foreach (var obj in Model.Rooms)
+            {
+                if (@obj.Status == SD.Available)
+                {
+                    <button type="button" class="btn btn-success mt-2">@obj.Name</button>
+                }
+
+                if (@obj.Status == SD.Cleaning)
+                {
+                    <button type="button" class="btn btn-warning mt-2">@obj.Name</button>
+                }
+                if (@obj.Status == SD.Busy)
+                {
+                    <button type="button" class="btn btn-danger mt-2">@obj.Name</button>
+                }
+                if (@obj.Status == SD.Renovation)
+                {
+                    <button type="button" class="btn btn-secondary mt-2">@obj.Name</button>
+                }
+
+            }
+        </div>
+
+    </div>
 
 </div>

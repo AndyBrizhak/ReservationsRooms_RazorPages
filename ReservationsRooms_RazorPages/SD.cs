@@ -24,7 +24,16 @@ namespace Reservations
             {
                 var room = new Room();
                 room.Id = i;
-                room.Name = i.ToString();
+                var strNum = i.ToString();
+                if (i<10)
+                {
+                    room.Name = $"0{strNum}";
+                }
+                else
+                {
+                    room.Name = i.ToString();
+                }
+                
                 //room.Status = SD.Renovation;
                 Rooms.Add(room);
             }
