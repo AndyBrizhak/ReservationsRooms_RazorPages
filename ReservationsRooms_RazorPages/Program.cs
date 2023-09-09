@@ -5,7 +5,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-//builder.Services.AddScoped<IStartInit, StartInit>();
 builder.Services.AddSignalR();
 
 var app = builder.Build();
@@ -26,10 +25,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-// #ToDo Initialize dates 
-//StartInit.Start();
-
 app.MapRazorPages();
+
 app.MapHub<StatusHub>("/hubs/statushub");
 
 

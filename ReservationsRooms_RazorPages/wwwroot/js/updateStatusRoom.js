@@ -3,7 +3,7 @@
 
 
 
-const btn_1_ToAvailable = document.getElementById("1:available"); 
+/*const btn_1_ToAvailable = document.getElementById("1:available"); */
 
 // create connection
 var connectionStatusHub = new signalR.HubConnectionBuilder()
@@ -36,8 +36,8 @@ connectionStatusHub.on("changeStatus", (idStatus) => {
 })
 
 // invoke hub method, aka send notification to hub
-function NewStatusRoomLoadedOnClient() {
-    //var status = document.getElementById(currentStatus);
+function changeStatus(id, status) {
+    var status = document.getElementById(id+status);
     //var id = document.getElementById(currentId);
     /*connectionStatusHub.send("NewStatusRoomLoaded", id, status)*/
 }

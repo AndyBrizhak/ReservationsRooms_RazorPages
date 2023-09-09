@@ -28,21 +28,15 @@
 				@foreach (var obj in @Model.Rooms)
 				{
 				<tr>
-					<td @* width="10%" *@ id="@obj.Id">
+					<td >
 						 @obj.Id
 					</td>
-					<td @* width="100%" *@ class="btn btn-info"                    					>
+					<td class="btn btn-info" id="(@obj.Id+@obj.Status)">
 						@obj.Status 
 					</td>
-					<td @* width="70%" *@>
-						@* row row-cols-6 *@
+					<td >
 						<div class="btn-group" role="group">
-							@* <a asp-page="Edit" 
-								asp-route-id=@obj.Id class="btn btn-info mx-2">
-								Edit Status
-							</a> *@
-
-							@if (obj.Status != "available")
+									@if (obj.Status != "available")
 							{
 								<form method="post">
 
@@ -87,3 +81,5 @@
 </div>
 <a asp-page="Index" class="btn btn-info">Back to Home Page</a>
 
+<script src="~/js/signalr.js"></script>
+<script src="~/js/updateStatusRoom.js"></script>
