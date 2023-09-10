@@ -26,21 +26,17 @@ btn_1_ToAvailable.addEventListener("click", function (e) {
 
 
 //connect to method that hub invokes, aka receive shange status from hub
-connectionStatusHub.on("changeStatus", (idStatus) => {
-    btn_1_ToAvailable.innerText = idStatus;
-    /*const currentIdStatus = id + status;*/
-    //const currentIdStatus = document.getElementById(id+currentStatus);
-    //currentIdStatus.innerText = newStatus.toString();
-    /*btn_currentClick = document.getElementById(id+currentStatus+newStatus);*/
-
+connectionStatusHub.on("changeStatus", (status, id) => {
+    var lblCurrent = document.getElementById(status + id);
+    lblCurrent.innerText = status;
 })
 
 // invoke hub method, aka send notification to hub
-function changeStatus(id, status) {
-    var status = document.getElementById(id+status);
-    //var id = document.getElementById(currentId);
-    /*connectionStatusHub.send("NewStatusRoomLoaded", id, status)*/
-}
+//function changeStatus(id, status) {
+//    
+    
+//    /*connectionStatusHub.send("NewStatusRoomLoaded", id, status)*/
+//}
 
 //start connection
 function fullfilled() {
