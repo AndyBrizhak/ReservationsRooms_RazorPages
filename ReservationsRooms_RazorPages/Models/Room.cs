@@ -10,5 +10,6 @@ namespace Reservations.Models
         public string? Description { get; set; }
         [Required]
         public string Status { get; set; } = SD.Renovation;
+        public string? BtnStatusId { get; set; }
     }
 }
