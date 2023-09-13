@@ -26,9 +26,33 @@ btn_1_ToAvailable.addEventListener("click", function (e) {
 
 
 //connect to method that hub invokes, aka receive shange status from hub
-connectionStatusHub.on("changeStatus", (status, id) => {
-    var lblCurrent = document.getElementById(status + id);
-    lblCurrent.innerText = status;
+connectionStatusHub.on("changeStatus", function (status, id) {
+    var lblCurrent = document.getElementById(`${status}${id}`);
+    if (typeof (lblCurrent) != 'undefined' && lblCurrent != null) {
+        // Exists
+        lblCurrent.innerText = status;
+        lblCurrent.classList.remove;
+        switch (status) {
+            case "renovation":
+                lblCurrent.add("btn btn-secondary");
+                break;
+            case "available":
+                llblCurrent.add("btn btn-success");
+                break;
+            case "busy":
+                llblCurrent.add("btn btn-danger");
+                break;
+            case "cleaning":
+                llblCurrent.add("btn btn-warning");
+                break;
+            default:
+                break;
+        }
+    }
+    //else {
+    //    (Console.log('$Current label undefined'))
+    //}
+
 })
 
 // invoke hub method, aka send notification to hub

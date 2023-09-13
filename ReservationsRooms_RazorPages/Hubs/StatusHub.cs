@@ -18,7 +18,7 @@ namespace Reservations.Hubs
 			BtnStatusId = $"{newStatus}{idRoom}";
 
 			//send update all client, that status room have been updated
-			await Clients.All.SendAsync("changeStatus", StatusRoom, RoomId, BtnStatusId);
+			await Clients.All.SendAsync("changeStatus", /*StatusRoom, RoomId,*/ BtnStatusId);
 		}
     }
 }
