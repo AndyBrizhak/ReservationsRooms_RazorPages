@@ -49,9 +49,9 @@ connectionStatusHub.on("changeStatus", function (status, id) {
                 break;
         }
     }
-    //else {
-    //    (Console.log('$Current label undefined'))
-    //}
+    else {
+        (Console.log('$Current label undefined'))
+    }
 
 })
 
