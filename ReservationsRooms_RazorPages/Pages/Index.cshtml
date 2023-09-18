@@ -68,20 +68,20 @@
             {
                 if (@obj.Status == SD.Available)
                 {
-                    <button type="button" class="btn btn-success mt-2">@obj.Name</button>
+                    <button type="button" class="btn btn-success mt-2" id="btnCurrent_@obj.Id">@obj.Name</button>
                 }
 
                 if (@obj.Status == SD.Cleaning)
                 {
-                    <button type="button" class="btn btn-warning mt-2">@obj.Name</button>
+                    <button type="button" class="btn btn-warning mt-2" id="btnCurrent_@obj.Id">@obj.Name</button>
                 }
                 if (@obj.Status == SD.Busy)
                 {
-                    <button type="button" class="btn btn-danger mt-2">@obj.Name</button>
+                    <button type="button" class="btn btn-danger mt-2" id="btnCurrent_@obj.Id">@obj.Name</button>
                 }
                 if (@obj.Status == SD.Renovation)
                 {
-                    <button type="button" class="btn btn-secondary mt-2">@obj.Name</button>
+                    <button type="button" class="btn btn-secondary mt-2" id="btnCurrent_@obj.Id">@obj.Name</button>
                 }
 
             }

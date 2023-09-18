@@ -27,7 +27,7 @@ btn_1_ToAvailable.addEventListener("click", function (e) {
 
 //connect to method that hub invokes, aka receive shange status from hub
 connectionStatusHub.on("changeStatus", function (status, id) {
-    var lblCurrent = document.getElementById(`${status}${id}`);
+    var lblCurrent = document.getElementById("btnCurrent_" + id);
     if (typeof (lblCurrent) != 'undefined' && lblCurrent != null) {
         // Exists
         lblCurrent.innerText = status;
