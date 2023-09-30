@@ -1,28 +1,23 @@
-﻿//const btn_currentClick;
-//const btn_currentClickId
-
-
-
-/*const btn_1_ToAvailable = document.getElementById("1:available"); */
-
-// create connection
+﻿// create connection
 var connectionStatusHub = new signalR.HubConnectionBuilder()
     .withUrl("/hubs/statushub")
     .Build();
 
-btn_1_ToAvailable.addEventListener("click", function (e) {
-    connectionStatusHub.send("NewStatusRoomLoaded", "1:available");
-    e.preventDefault();
-});
+//btn_1_ToAvailable.addEventListener("click", function (e) {
+//    connectionStatusHub.send("NewStatusRoomLoaded", "1:available");
+//    e.preventDefault();
+//});
+
 //btn_currentClickId= document.addEventListener("click", function (event) {
 //    return event.target.id;
 //});
 
-//btn_currentClick = document.getElementById(btn_currentClickId);
+idRoom = document.getElementById(idRoomOnPage);
+statusRoom = document.getElementById(statusRoomOnPage);
 
-//btn_currentClick.addEventListener("click"), function (event) {
-//    connectionStatusHub.send("NewStatusRoomLoaded", btn_currentClickId)
-//}
+btn_currentClick.addEventListener("click"), function (event) {
+    connectionStatusHub.send("NewStatus", idRoom, statusRoom)
+}
 
 
 //connect to method that hub invokes, aka receive shange status from hub
