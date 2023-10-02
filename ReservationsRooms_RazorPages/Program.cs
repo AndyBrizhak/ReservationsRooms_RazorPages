@@ -1,4 +1,3 @@
-using Reservations.Data;
 using Reservations.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
