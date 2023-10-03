@@ -10,8 +10,8 @@ var connectionStatusHub = new signalR.HubConnectionBuilder()
 //});
 
 //connect to method that hub invokes, aka receive shange status from hub
-connectionStatusHub.on("updateRoomOnIndex", function (status, id) {
-    var lblCurrent = document.getElementById("btnCurrent_" + id);
+connectionStatusHub.on("updateRoomOnIndex", function (name, status) {
+    var lblCurrent = document.getElementById(name);
     if (typeof (lblCurrent) != 'undefined' && lblCurrent != null) {
         // Exists
         lblCurrent.innerText = status;

@@ -40,11 +40,11 @@
 							{
 								<form method="post">
 									<input type="number" name="id" value=@obj.Id hidden />
+									<input type="text" name="name" value=@obj.Name hidden />
 									<input type="text" name="status" value="available" hidden />
 									<input class="btn btn-success p-1" 
-									type="submit" 
-									id="btnToAvailable_@obj.Id" 
-									value="To Available" />
+											type="submit" 
+											value="To Available" />
 								</form>
 							}
 
@@ -52,8 +52,11 @@
 							{
 								<form method="post">
 									<input type="number" name="id" value=@obj.Id hidden />
+									<input type="text" name="name" value=@obj.Name hidden />
 									<input type="text" name="status" value="cleaning" hidden />
-									<input class="btn btn-warning p-1" type="submit" id="btnToCleaning_@obj.Id" value="To Cleaning" />
+									<input class="btn btn-warning p-1" 
+											type="submit" 
+											value="To Cleaning" />
 								</form>
 							}
 
@@ -61,8 +64,11 @@
 							{
 								<form method="post">
 									<input type="number" name="id" value=@obj.Id hidden />
+									<input type="text" name="name" value=@obj.Name hidden />
 									<input type="text" name="status" value="busy" hidden />
-									<input class="btn btn-danger p-1" type="submit" id="btnToBusy_@obj.Id" value="To Busy" />
+									<input class="btn btn-danger p-1" 
+											type="submit" 
+											value="To Busy" />
 								</form>
 							}
 
@@ -70,8 +76,11 @@
 							{
 								<form method="post">
 									<input type="number" name="id" value=@obj.Id hidden />
+									<input type="text" name="name" value=@obj.Name hidden />
 									<input type="text" name="status" value="renovation" hidden />
-									<input class="btn btn-secondary p-1" type="submit" id="btnToRenovation_@obj.Id" value="To Renovation" />
+									<input class="btn btn-secondary p-1" 
+											type="submit" 
+											value="To Renovation" />
 								</form>
 							}
 						</div>
@@ -83,5 +92,5 @@
 </div>
 <a asp-page="Index" class="btn btn-info">Back to Home Page</a>
 
-<script src="~/js/signalr.js"></script>
-<script src="~/js/updateStatusRoom.js"></script>
+@* <script src="~/js/signalr.js"></script>
+<script src="~/js/updateStatusRoom.js"></script> *@
